@@ -1,0 +1,11 @@
+: <<'end_long_comment'
+
+end_long_comment
+
+export EDITOR="subl -w"
+export PATH=$PATH:~/bin
+
+# this is for virtualenvwrapper to easily change python virtual environment!
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/devel
+source /usr/local/bin/virtualenvwrapper.sh

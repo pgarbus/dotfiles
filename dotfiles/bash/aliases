@@ -1,0 +1,65 @@
+: <<'end_long_comment'
+alias tm='top -o vsize' # memory
+alias tu='top -o cpu' # cpu
+
+end_long_comment
+
+alias g="git status"
+
+alias h='history'
+alias rest='systemctl hibernate'
+
+alias ..='cd ..'
+alias cdd='cd -'
+alias cdp='cd ~/programmering/pluralsight_lectures/python/the-python-developers-toolkit/ && ls -CF'
+alias loud='echo this is quiet!!'
+function c() {
+	cd $1
+	ls -CF -a
+}
+
+alias reload="source ~/bin/dotfiles/bash/aliases"
+# alias top="history | awk '{a[$2]++}END{for(i in a){print a[i] " " i}}' | sort -rn | head" 
+alias ea='vim ~/bin/dotfiles/bash/aliases && reload'
+
+# enable color support of ls and also add handy aliases
+if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    alias ls='ls --color=auto'
+    #alias dir='dir --color=auto'
+    #alias vdir='vdir --color=auto'
+
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
+fi
+
+
+# colored GCC warnings and errors
+#export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
+
+# some more ls aliases
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+
+
+function take {
+	mkdir $1
+	cd $1
+}	
+
+function gg() {
+	git commit -v -a -m "$*"
+}
+alias gl='git pull'
+alias gnp='git-notpushed'
+alias gd='git diff'
+alias gco='git checkout'
+alias gc='git commit -v'
+alias gca='git commit -v -a'
+alias g='git status'
+alias gb='git branch'
+alias gba='git branch -a'
+alias gst='git status'
+alias glog='git log'
